@@ -5,3 +5,4 @@ MANIFEST
 dist/*
 src/*
 docs/_build
+docs/d51.*
