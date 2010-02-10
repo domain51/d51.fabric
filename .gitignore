@@ -4,3 +4,4 @@ MANIFEST
 *.py[co]
 dist/*
 src/*
+docs/_build
