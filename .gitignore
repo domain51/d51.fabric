@@ -1,0 +1,6 @@
+build/*
+d51/*
+MANIFEST
+*.py[co]
+dist/*
+src/*
