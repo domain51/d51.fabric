@@ -40,8 +40,10 @@ or ``python`` commands above with ``sudo``.
 necessary if you wish to utilize the tasks in ``d51.fabric``, as they utilize
 features that have yet to be merged back into the main line of development.
 
+
 Packaging ``d51.fabric``
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 ``d51.fabric`` is a package that contains the code necessary to assemble all of
 its separate pieces into one, installable package.  Once Fabric is installed,
 create a clone of the ``d51.fabric`` repository, then run the ``install``
@@ -58,6 +60,7 @@ in the correct location.
 
 Building This Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 You can build this documentation from within the repository by using the ``docs``
 task from Fabric::
 
@@ -70,6 +73,4 @@ If you prefer, you can run the command individually to build the documentation::
     prompt> fab src
     prompt> cd docs
     prompt> make html
-
-
 
