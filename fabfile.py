@@ -1,4 +1,4 @@
-from fabric.api import local
+from fabric.api import env, local, put, run
 import os
 
 D51_PACKAGES = [
@@ -51,3 +51,14 @@ def clean():
 def docs():
     src()
     local("cd docs && make html")
+
+def deploy_docs():
+    docs()
+    REMOTE_DIR = "/home/tswicegood/domains/domain51.com/public/docs/"
+    local("cd ./docs/_build/ && "
+          "cp -R ./html ./d51.fabric && "
+          "tar -cjf d51.fabric.tar.bz2 d51.fabric/")
+    put("./docs/_build/d51.fabric.tar.bz2",
+        REMOTE_DIR + "d51.fabric.tar.bz2")
+    run("cd %s && tar -xjf d51.fabric.tar.bz2" % REMOTE_DIR)
+    local("rm -rf ./docs/_build/d51.fabric*")
